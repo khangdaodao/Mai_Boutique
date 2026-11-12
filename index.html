@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <!-- ========================================================================
+       MAI'S BOUTIQUE — WELLNESS HOTEL ĐÀ NẴNG
+       Cấu trúc HTML5 chuẩn ngữ nghĩa, tối ưu SEO và Khả năng tiếp cận (A11y)
+       ======================================================================== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mai's Boutique — Wellness Hotel · 104 Tô Hiến Thành, Đà Nẵng</title>
+  <meta
+    name="description"
+    content="Mai's Boutique Đà Nẵng — Khách sạn wellness phong cách gỗ ấm trang trọng gần biển Mỹ Khê (10 phút đi bộ), nổi bật với giếng trời xanh mát và hồ bơi nội khu. Đánh giá 4.7/5 (221 nhận xét)."
+  />
+
+  <!-- Phông chữ Google Fonts: Cormorant Garamond (Tiêu đề thanh mảnh, trang trọng) & Inter (Nội dung rõ nét, hỗ trợ Tiếng Việt) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Hệ thống CSS tách module dễ bảo trì (Tokens -> Base -> Components -> Sections) -->
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+</head>
+<body>
+  <!-- Liên kết bỏ qua nhanh cho người dùng bàn phím & trình đọc màn hình -->
+  <a href="#main-content" class="sr-only">Chuyển đến nội dung chính</a>
+
+  <!-- ========================================================================
+       1. THANH ĐIỀU HƯỚNG (STICKY NAVBAR)
+       ======================================================================== -->
+  <header id="navbar" class="navbar">
+    <div class="container navbar__inner">
+      <!-- Logo & Tên thương hiệu -->
+      <a href="#top" class="navbar__brand" aria-label="Mai's Boutique Trang chủ">
+        <span class="navbar__monogram" aria-hidden="true">M</span>
+        <span class="navbar__brand-text">
+          <span class="navbar__title">Mai's Boutique</span>
+          <span class="navbar__subtitle">Wellness Hotel · Đà Nẵng</span>
+        </span>
+      </a>
+
+      <!-- Menu điều hướng Desktop -->
+      <nav class="navbar__nav" aria-label="Điều hướng chính">
+        <a href="#concept" class="navbar__link" data-i18n="navStory">Không gian</a>
+        <a href="#rooms" class="navbar__link" data-i18n="navRooms">Hạng phòng</a>
+        <a href="#amenities" class="navbar__link" data-i18n="navAmenities">Tiện ích</a>
+        <a href="#gallery" class="navbar__link" data-i18n="navGallery">Thư viện</a>
+        <a href="#reviews" class="navbar__link" data-i18n="navReviews">Đánh giá</a>
+        <a href="#location" class="navbar__link" data-i18n="navLocation">Vị trí</a>
+      </nav>
+
+      <!-- Bộ chuyển đổi Tiền tệ & Ngôn ngữ dạng Icon Dropdown gọn gàng + Nút đặt phòng -->
+      <div class="navbar__actions">
+        <!-- Dropdown chọn đơn vị tiền tệ -->
+        <div class="nav-dropdown" data-dropdown="currency">
+          <button
+            type="button"
+            class="icon-pill-btn"
+            data-dropdown-toggle="currency"
+            aria-label="Chọn đơn vị tiền tệ (VND / USD)"
+            aria-haspopup="menu"
+            aria-expanded="false"
+            title="Tiền tệ / Currency"
+          >
+            <i data-lucide="coins" width="18" height="18" aria-hidden="true"></i>
+          </button>
+          <div class="nav-dropdown__menu" role="menu" aria-label="Đơn vị tiền tệ">
+            <button type="button" class="nav-dropdown__item is-active" role="menuitemradio" aria-checked="true" data-currency-btn="VND">
+              <span>₫ VND</span>
+              <i data-lucide="check" width="14" height="14" class="nav-dropdown__check" aria-hidden="true"></i>
+            </button>
+            <button type="button" class="nav-dropdown__item" role="menuitemradio" aria-checked="false" data-currency-btn="USD">
+              <span>$ USD</span>
+              <i data-lucide="check" width="14" height="14" class="nav-dropdown__check" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Dropdown chọn ngôn ngữ (Hình quả cầu) -->
+        <div class="nav-dropdown" data-dropdown="lang">
+          <button
+            type="button"
+            class="icon-pill-btn"
+            data-dropdown-toggle="lang"
+            aria-label="Chọn ngôn ngữ (Tiếng Việt / English)"
+            aria-haspopup="menu"
+            aria-expanded="false"
+            title="Ngôn ngữ / Language"
+          >
+            <i data-lucide="globe" width="18" height="18" aria-hidden="true"></i>
+          </button>
+          <div class="nav-dropdown__menu" role="menu" aria-label="Ngôn ngữ">
+            <button type="button" class="nav-dropdown__item is-active" role="menuitemradio" aria-checked="true" data-lang-btn="vi">
+              <span>Tiếng Việt</span>
+              <i data-lucide="check" width="14" height="14" class="nav-dropdown__check" aria-hidden="true"></i>
+            </button>
+            <button type="button" class="nav-dropdown__item" role="menuitemradio" aria-checked="false" data-lang-btn="en">
+              <span>English</span>
+              <i data-lucide="check" width="14" height="14" class="nav-dropdown__check" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          class="btn btn--primary btn--sm navbar__cta"
+          data-open-booking="deluxe-timber"
+          data-i18n="navBook"
+        >
+          Đặt phòng ngay
+        </button>
+
+        <!-- Nút mở menu trên di động -->
+        <button
+          type="button"
+          id="open-mobile-menu"
+          class="navbar__menu-btn"
+          aria-label="Mở menu điều hướng"
+          aria-expanded="false"
+          aria-controls="mobile-drawer"
+        >
+          <i data-lucide="menu" width="24" height="24" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Ngăn kéo Menu cho thiết bị di động (Mobile Drawer) -->
+  <div id="mobile-drawer" class="mobile-drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Menu di động">
+    <div class="mobile-drawer__panel">
+      <div class="mobile-drawer__header">
+        <span class="font-display" style="font-size:1.25rem; font-weight:700;">Mai's Boutique</span>
+        <button type="button" id="close-mobile-menu" class="navbar__menu-btn" aria-label="Đóng menu">
+          <i data-lucide="x" width="22" height="22" aria-hidden="true"></i>
+        </button>
+      </div>
+      <nav class="mobile-drawer__links" aria-label="Điều hướng di động">
+        <a href="#concept" class="mobile-drawer__link" data-i18n="navStory">Không gian</a>
+        <a href="#rooms" class="mobile-drawer__link" data-i18n="navRooms">Hạng phòng</a>
+        <a href="#amenities" class="mobile-drawer__link" data-i18n="navAmenities">Tiện ích</a>
+        <a href="#gallery" class="mobile-drawer__link" data-i18n="navGallery">Thư viện</a>
+        <a href="#reviews" class="mobile-drawer__link" data-i18n="navReviews">Đánh giá</a>
+        <a href="#location" class="mobile-drawer__link" data-i18n="navLocation">Vị trí</a>
+      </nav>
+      <button type="button" class="btn btn--primary btn--full" data-open-booking="deluxe-timber" data-i18n="navBook">
+        Đặt phòng ngay
+      </button>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <!-- ======================================================================
+         2. HERO SECTION & THANH KIỂM TRA PHÒNG NỔI (FLOATING BOOKING BAR)
+         Thiết kế lấy cảm hứng trực tiếp từ ảnh tham khảo concept gỗ trang trọng
+         ====================================================================== -->
+    <section id="top" class="hero">
+      <!-- Ảnh nền độ phân giải cao (2048x1362) hồ bơi giếng trời ban đêm -->
+      <div class="hero__bg">
+        <img
+          src="assets/images/pool-night.jpg"
+          alt="Hồ bơi giếng trời ánh đèn ấm và ban công gỗ tại Mai's Boutique Đà Nẵng"
+        />
+        <div class="hero__scrim" aria-hidden="true"></div>
+      </div>
+
+      <!-- Tiêu đề trung tâm -->
+      <div class="container hero__content">
+        <div class="hero__eyebrow">
+          <i data-lucide="map-pin" width="14" height="14" aria-hidden="true"></i>
+          <span data-i18n="heroEyebrow">104 Tô Hiến Thành · An Hải · Đà Nẵng</span>
+        </div>
+
+        <h1 class="hero__title" data-i18n="heroTitle">
+          Nghỉ Dưỡng Gỗ Ấm Giữa Lòng Phố Biển
+        </h1>
+
+        <div class="hero__rating-pill">
+          <span class="rating-stars" aria-hidden="true">
+            <i data-lucide="star" width="14" height="14" fill="currentColor"></i>
+            <i data-lucide="star" width="14" height="14" fill="currentColor"></i>
+            <i data-lucide="star" width="14" height="14" fill="currentColor"></i>
+            <i data-lucide="star" width="14" height="14" fill="currentColor"></i>
+            <i data-lucide="star" width="14" height="14" fill="currentColor"></i>
+          </span>
+          <span data-i18n="heroTrustRating">4.7 / 5 (221 đánh giá Google Maps)</span>
+        </div>
+      </div>
+
+      <!-- Thanh tìm phòng nổi dạng kính mờ (Floating Glass Booking Bar) -->
+      <div class="container hero__booking-wrap">
+        <div class="booking-bar">
+          <form id="hero-booking-form" class="booking-bar__form" novalidate>
+            <div class="field-group">
+              <label for="hero-checkin" class="field-group__label">
+                <i data-lucide="calendar" width="14" height="14" aria-hidden="true"></i>
+                <span data-i18n="labelCheckIn">Nhận phòng</span>
+              </label>
+              <input id="hero-checkin" type="date" class="field-control" required />
+            </div>
+
+            <div class="field-group">
+              <label for="hero-checkout" class="field-group__label">
+                <i data-lucide="calendar-check" width="14" height="14" aria-hidden="true"></i>
+                <span data-i18n="labelCheckOut">Trả phòng</span>
+              </label>
+              <input id="hero-checkout" type="date" class="field-control" required />
+            </div>
+
+            <div class="field-group">
+              <label for="hero-guests" class="field-group__label">
+                <i data-lucide="users" width="14" height="14" aria-hidden="true"></i>
+                <span data-i18n="labelGuests">Số khách</span>
+              </label>
+              <select id="hero-guests" class="field-control">
+                <option value="1">1</option>
+                <option value="2" selected>2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="6">6</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="hero-rooms" class="field-group__label">
+                <i data-lucide="bed-double" width="14" height="14" aria-hidden="true"></i>
+                <span data-i18n="labelRooms">Số phòng</span>
+              </label>
+              <select id="hero-rooms" class="field-control">
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn--primary" data-i18n="btnCheckAvail">
+              Tìm Phòng Trống
+            </button>
+          </form>
+
+          <p id="hero-booking-error" class="field-error" style="margin-top:6px;" role="alert"></p>
+
+          <div class="booking-bar__meta">
+            <span data-i18n="bookingMetaDates">Nhận phòng 14:00 · Trả phòng 12:00</span>
+            <span data-i18n="bookingMetaDirect">Đặt trực tiếp — Không phí trung gian · Hỗ trợ hành lý 24/7</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         3. CÂU CHUYỆN THƯƠNG HIỆU & CONCEPT KIẾN TRÚC GỖ GIẾNG TRỜI
+         ====================================================================== -->
+    <section id="concept" class="section reveal-section">
+      <div class="container story-grid">
+        <!-- Bố cục ảnh đa tầng khoe kiến trúc giếng trời & nội thất gỗ -->
+        <div class="story-media">
+          <div class="story-media__main">
+            <img
+              src="assets/images/courtyard-lounge.jpg"
+              alt="Kiến trúc giếng trời thông tầng, gạch thông gió và góc thư giãn gỗ tại Mai's Boutique"
+              loading="lazy"
+            />
+          </div>
+          <div class="story-media__side-stack">
+            <div class="story-media__side">
+              <img
+                src="assets/images/dining-wood.jpg"
+                alt="Không gian sinh hoạt bàn gỗ nguyên khối và tủ mây tre thủ công"
+                loading="lazy"
+              />
+            </div>
+            <div class="story-stat-card">
+              <div class="story-stat-card__num" data-i18n="storyStatNum">87.3%</div>
+              <div class="story-stat-card__label" data-i18n="storyStatLabel">
+                Khách hàng chấm 5 sao tuyệt đối trên Google Maps (193/221 đánh giá)
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nội dung triết lý thương hiệu -->
+        <div>
+          <span class="section-eyebrow">
+            <i data-lucide="sparkles" width="14" height="14" aria-hidden="true"></i>
+            <span data-i18n="storyEyebrow">Triết lý & Kiến trúc</span>
+          </span>
+          <h2 class="section-title" data-i18n="storyTitle">
+            Một Ốc Đảo Gỗ & Ánh Sáng Giữa Lòng An Hải
+          </h2>
+          <p style="margin-bottom:var(--space-4);" data-i18n="storyP1">
+            Lấy cảm hứng từ chất liệu gỗ tự nhiên, đá ong bản địa và nghệ thuật mây tre đan, Mai's Boutique được thiết kế xoay quanh khoảng giếng trời thông tầng đón nắng gió tự nhiên.
+          </p>
+          <p data-i18n="storyP2">
+            Tách biệt khỏi sự ồn ào của đại lộ lớn nhưng vẫn kết nối nhanh chóng tới biển Mỹ Khê, mỗi buổi sáng tại đây bắt đầu bằng làn nước hồ bơi êm ả và sự tiếp đón ân cần như người thân trong gia đình.
+          </p>
+
+          <div class="story-pillars">
+            <div class="pillar-card">
+              <div class="pillar-card__icon" aria-hidden="true">
+                <i data-lucide="layers" width="18" height="18"></i>
+              </div>
+              <div>
+                <div class="pillar-card__title" data-i18n="pillar1Title">Kiến trúc gỗ & Đá ong</div>
+                <div class="pillar-card__text" data-i18n="pillar1Text">Nội thất lam gỗ sồi ấm áp kết hợp mảng tường đá ong và gạch bông Indochine.</div>
+              </div>
+            </div>
+
+            <div class="pillar-card">
+              <div class="pillar-card__icon" aria-hidden="true">
+                <i data-lucide="sun" width="18" height="18"></i>
+              </div>
+              <div>
+                <div class="pillar-card__title" data-i18n="pillar2Title">Giếng trời & Mảng xanh</div>
+                <div class="pillar-card__text" data-i18n="pillar2Text">Bức tường cây xanh thẳng đứng và hồ bơi trung tâm điều hòa vi khí hậu.</div>
+              </div>
+            </div>
+
+            <div class="pillar-card">
+              <div class="pillar-card__icon" aria-hidden="true">
+                <i data-lucide="heart-handshake" width="18" height="18"></i>
+              </div>
+              <div>
+                <div class="pillar-card__title" data-i18n="pillar3Title">Dịch vụ cá nhân hóa</div>
+                <div class="pillar-card__text" data-i18n="pillar3Text">Được du khách khen ngợi đặc biệt bởi sự tận tâm của đội ngũ lễ tân (Ms. Thu, Ms. Nhi).</div>
+              </div>
+            </div>
+
+            <div class="pillar-card">
+              <div class="pillar-card__icon" aria-hidden="true">
+                <i data-lucide="volume-x" width="18" height="18"></i>
+              </div>
+              <div>
+                <div class="pillar-card__title" data-i18n="pillar4Title">Yên tĩnh tuyệt đối</div>
+                <div class="pillar-card__text" data-i18n="pillar4Text">Tọa lạc tại hẻm 104 Tô Hiến Thành an ninh, lý tưởng để nghỉ ngơi và làm việc từ xa.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         4. DANH SÁCH HẠNG PHÒNG (DISCOVER YOUR STAY — 3 CỘT)
+         Dữ liệu phòng được render tự động từ js/data.js thông qua js/components.js
+         ====================================================================== -->
+    <section id="rooms" class="section section--sand reveal-section">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <span class="section-eyebrow" data-i18n="roomsEyebrow">Khám Phá Không Gian Lưu Trú</span>
+          <h2 class="section-title" data-i18n="roomsTitle">Lựa Chọn Hạng Phòng Của Bạn</h2>
+          <p class="section-subtitle" data-i18n="roomsSubtitle">
+            Mỗi căn phòng đều được chăm chút mùi hương dịu nhẹ, ga trải cao cấp và ánh sáng tự nhiên từ giếng trời hoặc tán cây xanh.
+          </p>
+        </div>
+
+        <!-- Thông báo bộ lọc khi người dùng tìm phòng từ thanh Hero -->
+        <div id="booking-filter-banner" class="booking-filter-banner" hidden>
+          <span id="booking-filter-text" style="font-size:0.875rem; font-weight:600; color:var(--color-wood-900);"></span>
+          <button type="button" id="clear-booking-filter" class="btn btn--outline btn--sm" data-i18n="btnClearFilter">
+            Đặt lại ngày
+          </button>
+        </div>
+
+        <!-- Lưới thẻ phòng (Render bởi JS) -->
+        <div id="rooms-grid" class="rooms-grid"></div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         5. TIỆN ÍCH & CHÍNH SÁCH MINH BẠCH (WELLNESS AMENITIES & HOUSE NOTES)
+         ====================================================================== -->
+    <section id="amenities" class="section reveal-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow" data-i18n="amenitiesEyebrow">Tiện Nghi & Minh Bạch</span>
+          <h2 class="section-title" data-i18n="amenitiesTitle">Trải Nghiệm Trọn Vẹn & Rõ Ràng</h2>
+          <p class="section-subtitle" data-i18n="amenitiesSubtitle">
+            Chúng tôi trân trọng sự tin tưởng của du khách bằng việc cung cấp đầy đủ tiện nghi thiết yếu và thông báo minh bạch các đặc điểm công trình.
+          </p>
+        </div>
+
+        <div class="amenities-layout">
+          <!-- Lưới 6 tiện ích nổi bật (Render từ js/data.js) -->
+          <div id="amenities-grid" class="amenities-grid"></div>
+
+          <!-- Hộp lưu ý & chính sách minh bạch -->
+          <aside class="policy-box">
+            <h3 data-i18n="policyTitle">Lưu ý & Chính sách lưu trú</h3>
+            <ul id="policy-list" class="policy-list"></ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         6. THƯ VIỆN ẢNH THỰC TẾ (PHOTO GALLERY & LIGHTBOX)
+         ====================================================================== -->
+    <section id="gallery" class="section section--sand reveal-section">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <span class="section-eyebrow" data-i18n="galleryEyebrow">Hình Ảnh Thực Tế Từ Google Maps</span>
+          <h2 class="section-title" data-i18n="galleryTitle">Thước Phim Không Gian Mai's Boutique</h2>
+          <p class="section-subtitle" data-i18n="gallerySubtitle">
+            Nhấn vào từng bức ảnh để xem kích thước gốc độ phân giải cao.
+          </p>
+        </div>
+
+        <!-- Bộ lọc danh mục ảnh -->
+        <div class="gallery-filters" role="group" aria-label="Lọc ảnh theo khu vực">
+          <button type="button" class="filter-tab is-active" data-gallery-filter="all" data-i18n="filterAll">Tất cả (10)</button>
+          <button type="button" class="filter-tab" data-gallery-filter="pool" data-i18n="filterPool">Hồ bơi & Sảnh</button>
+          <button type="button" class="filter-tab" data-gallery-filter="rooms" data-i18n="filterRooms">Phòng nghỉ</button>
+          <button type="button" class="filter-tab" data-gallery-filter="architecture" data-i18n="filterArch">Kiến trúc gỗ</button>
+        </div>
+
+        <!-- Lưới ảnh (Render từ js/data.js) -->
+        <div id="gallery-grid" class="gallery-grid"></div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         7. BANNER ĐÁNH GIÁ KHÁCH HÀNG (NỀN GỖ TỐI TRANG TRỌNG NHƯ ẢNH MẪU)
+         ====================================================================== -->
+    <section id="reviews" class="section section--dark reviews-banner reveal-section">
+      <div class="reviews-banner__bg" aria-hidden="true">
+        <img src="assets/images/hero-pool.jpg" alt="" />
+      </div>
+
+      <div class="container reviews-banner__inner">
+        <div class="reviews-hero-row">
+          <!-- Điểm số tổng quan & Thanh phân bổ sao -->
+          <div class="rating-summary">
+            <span class="section-eyebrow" data-i18n="reviewsEyebrow">Cảm Nhận Từ Du Khách</span>
+            <div class="rating-score-wrap">
+              <div class="rating-score">4.7</div>
+              <div>
+                <div class="rating-stars" aria-label="4.7 trên 5 sao">
+                  <i data-lucide="star" width="18" height="18" fill="currentColor" aria-hidden="true"></i>
+                  <i data-lucide="star" width="18" height="18" fill="currentColor" aria-hidden="true"></i>
+                  <i data-lucide="star" width="18" height="18" fill="currentColor" aria-hidden="true"></i>
+                  <i data-lucide="star" width="18" height="18" fill="currentColor" aria-hidden="true"></i>
+                  <i data-lucide="star" width="18" height="18" fill="currentColor" aria-hidden="true"></i>
+                </div>
+                <div style="font-size:0.875rem; color:var(--color-wood-300); margin-top:4px;" data-i18n="reviewsTitle">
+                  4.7 Sao Từ 221 Trải Nghiệm Thực Tế
+                </div>
+              </div>
+            </div>
+
+            <!-- Thanh biểu đồ phân bổ số lượt đánh giá (Render từ JS) -->
+            <div id="rating-bars" class="rating-bars"></div>
+
+            <div>
+              <a
+                href="https://maps.app.goo.gl/XLX3ed93QSMrhzPh8"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn--outline-light btn--sm"
+              >
+                <span data-i18n="reviewsGoogleBtn">Xem tất cả trên Google Maps</span>
+                <i data-lucide="external-link" width="14" height="14" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Trích dẫn nổi bật -->
+          <div class="featured-quote">
+            <div class="rating-stars" aria-hidden="true">
+              <i data-lucide="star" width="16" height="16" fill="currentColor"></i>
+              <i data-lucide="star" width="16" height="16" fill="currentColor"></i>
+              <i data-lucide="star" width="16" height="16" fill="currentColor"></i>
+              <i data-lucide="star" width="16" height="16" fill="currentColor"></i>
+              <i data-lucide="star" width="16" height="16" fill="currentColor"></i>
+            </div>
+            <blockquote class="featured-quote__text" data-i18n="reviewsQuote">
+              "Một ốc đảo nhỏ bình yên giữa con hẻm. Nhân viên hiếu khách, tận tâm và căn phòng lúc nào cũng thơm dịu dễ chịu."
+            </blockquote>
+            <div style="font-size:0.875rem; color:var(--color-gold-400); font-weight:500;" data-i18n="reviewsQuoteAuthor">
+              Haixiong Jiang — Local Guide · Lưu trú phòng 303
+            </div>
+          </div>
+        </div>
+
+        <!-- Lưới chi tiết các nhận xét thật từ Google Maps (Render từ JS) -->
+        <div id="reviews-grid" class="reviews-grid"></div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         8. VỊ TRÍ BẢN ĐỒ & LIÊN HỆ TRỰC TIẾP
+         ====================================================================== -->
+    <section id="location" class="section reveal-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow" data-i18n="locationEyebrow">Vị Trí & Liên Hệ Trực Tiếp</span>
+          <h2 class="section-title" data-i18n="locationTitle">Ghé Thăm Mai's Boutique Tại Đà Nẵng</h2>
+          <p class="section-subtitle" data-i18n="locationSubtitle">
+            Chỉ cách bãi biển Mỹ Khê vài phút đi bộ, thuận tiện di chuyển ra cầu Rồng và sân bay quốc tế Đà Nẵng.
+          </p>
+        </div>
+
+        <div class="location-grid">
+          <div class="contact-card">
+            <div class="contact-row">
+              <div class="contact-row__icon" aria-hidden="true">
+                <i data-lucide="map-pin" width="20" height="20"></i>
+              </div>
+              <div>
+                <div style="font-size:0.75rem; font-weight:600; text-transform:uppercase; color:var(--color-wood-500);" data-i18n="contactAddressLabel">Địa chỉ</div>
+                <div id="contact-address-text" style="font-weight:600; color:var(--color-wood-900); margin-top:2px;">
+                  104 Tô Hiến Thành, An Hải, Sơn Trà, Đà Nẵng 550000, Việt Nam
+                </div>
+                <div style="font-size:0.8rem; color:var(--color-wood-500); margin-top:2px;">Plus Code: 366R+CX An Hải, Đà Nẵng</div>
+              </div>
+            </div>
+
+            <div class="contact-row">
+              <div class="contact-row__icon" aria-hidden="true">
+                <i data-lucide="phone" width="20" height="20"></i>
+              </div>
+              <div>
+                <div style="font-size:0.75rem; font-weight:600; text-transform:uppercase; color:var(--color-wood-500);" data-i18n="contactPhoneLabel">Hotline / Zalo đặt phòng</div>
+                <a href="tel:+84862298125" style="font-family:var(--font-display); font-size:1.3rem; font-weight:700; color:var(--color-wood-900); display:inline-block; margin-top:2px;">
+                  +84 862 298 125
+                </a>
+              </div>
+            </div>
+
+            <div class="contact-row">
+              <div class="contact-row__icon" aria-hidden="true">
+                <i data-lucide="clock" width="20" height="20"></i>
+              </div>
+              <div>
+                <div style="font-size:0.75rem; font-weight:600; text-transform:uppercase; color:var(--color-wood-500);" data-i18n="contactHoursLabel">Giờ nhận & trả phòng</div>
+                <div style="font-weight:500; color:var(--color-wood-900); margin-top:2px;" data-i18n="contactHoursVal">
+                  Nhận phòng: 14:00 · Trả phòng: 12:00
+                </div>
+              </div>
+            </div>
+
+            <div style="display:flex; flex-wrap:wrap; gap:var(--space-3); margin-top:auto; padding-top:var(--space-2);">
+              <a
+                href="https://maps.app.goo.gl/XLX3ed93QSMrhzPh8"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn--primary"
+              >
+                <i data-lucide="navigation" width="16" height="16" aria-hidden="true"></i>
+                <span data-i18n="btnDirections">Chỉ đường Google Maps</span>
+              </a>
+              <button type="button" id="copy-phone-btn" class="btn btn--outline">
+                <i data-lucide="copy" width="16" height="16" aria-hidden="true"></i>
+                <span data-i18n="btnCopyPhone">Sao chép SĐT</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Bản đồ Google Maps nhúng trực tiếp tọa độ của Mai's Boutique -->
+          <div class="map-frame">
+            <iframe
+              title="Bản đồ vị trí Mai's Boutique Đà Nẵng"
+              src="https://www.google.com/maps?q=16.0610177,108.2424088&hl=vi&z=16&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       9. CHÂN TRANG (FOOTER)
+       ======================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div style="display:flex; align-items:center; gap:var(--space-3); margin-bottom:var(--space-3);">
+            <span class="navbar__monogram" aria-hidden="true">M</span>
+            <span class="font-display" style="font-size:1.3rem; font-weight:700; color:#FFFFFF;">Mai's Boutique</span>
+          </div>
+          <p style="font-size:0.875rem; color:var(--color-wood-300); max-width:380px;" data-i18n="footerDesc">
+            Khách sạn boutique phong cách gỗ trang trọng & wellness tại 104 Tô Hiến Thành, An Hải, Đà Nẵng. Trân trọng từng khoảnh khắc nghỉ ngơi của bạn.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer__heading" data-i18n="footerQuickLinks">Điều hướng nhanh</h4>
+          <ul style="display:flex; flex-direction:column; gap:8px; font-size:0.875rem;">
+            <li><a href="#concept" data-i18n="navStory">Không gian</a></li>
+            <li><a href="#rooms" data-i18n="navRooms">Hạng phòng</a></li>
+            <li><a href="#amenities" data-i18n="navAmenities">Tiện ích</a></li>
+            <li><a href="#gallery" data-i18n="navGallery">Thư viện</a></li>
+            <li><a href="#reviews" data-i18n="navReviews">Đánh giá</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer__heading" data-i18n="footerBookingSupport">Hỗ trợ đặt phòng</h4>
+          <ul style="display:flex; flex-direction:column; gap:8px; font-size:0.875rem;">
+            <li><a href="tel:+84862298125">+84 862 298 125</a></li>
+            <li>104 Tô Hiến Thành, An Hải, Đà Nẵng</li>
+            <li>
+              <a href="https://maps.app.goo.gl/XLX3ed93QSMrhzPh8" target="_blank" rel="noopener noreferrer" style="color:var(--color-gold-400);">
+                Google Maps · 4.7 ★ (221)
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span data-i18n="footerCopyright">© 2026 Mai's Boutique Đà Nẵng. Dữ liệu thông tin & đánh giá trích xuất từ Google Maps.</span>
+        <span>Wellness Hotel · Mỹ Khê Beach Area</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       10. MODAL CHI TIẾT PHÒNG & ĐẶT PHÒNG TRỰC TUYẾN
+       ======================================================================== -->
+  <div id="booking-modal" class="modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-room-title">
+    <div class="modal-dialog">
+      <button type="button" id="close-booking-modal" class="modal__close" aria-label="Đóng cửa sổ đặt phòng">
+        <i data-lucide="x" width="20" height="20" aria-hidden="true"></i>
+      </button>
+
+      <div class="booking-modal__grid">
+        <!-- Cột trái: Ảnh & Thông tin chi tiết hạng phòng -->
+        <div class="booking-modal__preview">
+          <div class="booking-modal__img-wrap">
+            <img id="modal-room-img" src="assets/images/room-deluxe-desk.jpg" alt="" />
+          </div>
+          <div>
+            <span id="modal-room-badge" class="badge"></span>
+            <h3 id="modal-room-title" style="font-size:1.6rem; margin-top:var(--space-2);"></h3>
+            <p id="modal-room-desc" style="font-size:0.875rem; margin-top:var(--space-2);"></p>
+          </div>
+          <div>
+            <div style="font-size:0.75rem; font-weight:700; text-transform:uppercase; color:var(--color-wood-500); margin-bottom:var(--space-2);" data-i18n="modalRoomSpecs">
+              Thông số & Tiện nghi phòng
+            </div>
+            <div id="modal-room-specs" class="room-card__specs"></div>
+          </div>
+        </div>
+
+        <!-- Cột phải: Form thông tin khách & Tóm tắt giá -->
+        <div class="booking-modal__form-wrap">
+          <h3 style="font-size:1.45rem; margin-bottom:var(--space-4);" data-i18n="modalBookingTitle">
+            Xác nhận yêu cầu đặt phòng
+          </h3>
+
+          <form id="modal-booking-form" style="display:flex; flex-direction:column; gap:var(--space-3);" novalidate>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:var(--space-3);">
+              <div class="field-group">
+                <label for="modal-checkin" class="field-group__label" data-i18n="labelCheckIn">Nhận phòng</label>
+                <input id="modal-checkin" type="date" class="field-control" required />
+              </div>
+              <div class="field-group">
+                <label for="modal-checkout" class="field-group__label" data-i18n="labelCheckOut">Trả phòng</label>
+                <input id="modal-checkout" type="date" class="field-control" required />
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label for="modal-rooms" class="field-group__label" data-i18n="labelRooms">Số phòng</label>
+              <select id="modal-rooms" class="field-control">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="guest-name" class="field-group__label" data-i18n="modalFullName">Họ và tên khách *</label>
+              <input id="guest-name" type="text" class="field-control" placeholder="Nguyễn Văn A" required />
+              <span id="err-guest-name" class="field-error" role="alert"></span>
+            </div>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:var(--space-3);">
+              <div class="field-group">
+                <label for="guest-phone" class="field-group__label" data-i18n="modalPhone">Số điện thoại / WhatsApp *</label>
+                <input id="guest-phone" type="tel" class="field-control" placeholder="+84 9xx xxx xxx" required />
+                <span id="err-guest-phone" class="field-error" role="alert"></span>
+              </div>
+              <div class="field-group">
+                <label for="guest-email" class="field-group__label" data-i18n="modalEmail">Email nhận xác nhận</label>
+                <input id="guest-email" type="email" class="field-control" placeholder="guest@email.com" />
+                <span id="err-guest-email" class="field-error" role="alert"></span>
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label for="guest-note" class="field-group__label" data-i18n="modalNote">Yêu cầu thêm (đón sân bay, hỗ trợ hành lý, giờ đến...)</label>
+              <textarea id="guest-note" class="field-control" style="height:72px; padding-block:10px; resize:vertical;"></textarea>
+            </div>
+
+            <!-- Hộp tính tổng tiền dự kiến -->
+            <div class="summary-box">
+              <div class="summary-box__row">
+                <span data-i18n="modalNightsLabel">Số đêm lưu trú</span>
+                <strong id="summary-nights">2 đêm</strong>
+              </div>
+              <div class="summary-box__row">
+                <span data-i18n="modalRoomCountLabel">Số lượng phòng</span>
+                <strong id="summary-room-count">1 phòng</strong>
+              </div>
+              <div class="summary-box__row summary-box__total">
+                <span data-i18n="modalEstTotal">Tổng tiền dự kiến</span>
+                <span id="summary-total" style="color:var(--color-gold-700);">2.300.000₫</span>
+              </div>
+              <div style="font-size:0.75rem; color:var(--color-wood-500);" data-i18n="modalPayNote">
+                Thanh toán linh hoạt tại quầy lễ tân khi nhận phòng.
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--full" data-i18n="modalSubmit">
+              Gửi Yêu Cầu Đặt Phòng
+            </button>
+          </form>
+
+          <!-- Trạng thái xác nhận thành công -->
+          <div id="modal-booking-success" hidden style="padding-block:var(--space-6); text-align:center; display:flex; flex-direction:column; gap:var(--space-4); align-items:center;">
+            <span class="badge badge--success" style="font-size:0.85rem; padding:0.45rem 1rem;">
+              <i data-lucide="check-circle-2" width="16" height="16" aria-hidden="true"></i>
+              <span id="booking-ref-code">MAI-123456</span>
+            </span>
+            <p id="booking-success-detail" style="font-size:0.95rem; line-height:1.65;"></p>
+            <div style="display:flex; gap:var(--space-3); flex-wrap:wrap; justify-content:center;">
+              <a href="tel:+84862298125" class="btn btn--outline">
+                <i data-lucide="phone" width="16" height="16" aria-hidden="true"></i>
+                +84 862 298 125
+              </a>
+              <button type="button" id="booking-done-btn" class="btn btn--primary">OK</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       11. LIGHTBOX XEM ẢNH THƯ VIỆN KÍCH THƯỚC LỚN
+       ======================================================================== -->
+  <div id="gallery-lightbox" class="modal-backdrop lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Xem ảnh phóng to">
+    <div class="lightbox__content">
+      <button type="button" id="lightbox-close" class="modal__close" style="position:fixed; top:20px; right:20px; margin:0;" aria-label="Đóng ảnh">
+        <i data-lucide="x" width="20" height="20" aria-hidden="true"></i>
+      </button>
+      <button type="button" id="lightbox-prev" class="lightbox__nav lightbox__nav--prev" aria-label="Ảnh trước">
+        <i data-lucide="chevron-left" width="22" height="22" aria-hidden="true"></i>
+      </button>
+      <img id="lightbox-img" class="lightbox__img" src="" alt="" />
+      <p id="lightbox-caption" class="lightbox__caption"></p>
+      <button type="button" id="lightbox-next" class="lightbox__nav lightbox__nav--next" aria-label="Ảnh tiếp theo">
+        <i data-lucide="chevron-right" width="22" height="22" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       12. THÔNG BÁO NỔI (TOAST NOTIFICATION)
+       ======================================================================== -->
+  <div id="toast" class="toast" role="status" aria-live="polite">
+    <i data-lucide="check-circle-2" width="18" height="18" style="color:var(--color-gold-400); flex-shrink:0;" aria-hidden="true"></i>
+    <span id="toast-message" style="font-size:0.875rem;"></span>
+  </div>
+
+  <!-- ========================================================================
+       13. NÚT LIÊN HỆ NHANH GÓC DƯỚI BÊN PHẢI (FLOATING CONCIERGE DOCK)
+       Ấn để mở/đóng các kênh liên hệ: Điện thoại, Zalo, Booking.com, Agoda
+       ======================================================================== -->
+  <div id="concierge-dock" class="concierge-dock">
+    <!-- Thanh pill dọc chứa các kênh liên hệ (Render từ js/data.js) -->
+    <nav
+      id="concierge-menu"
+      class="concierge-menu"
+      aria-label="Kênh liên hệ & đặt phòng nhanh"
+      aria-hidden="true"
+    ></nav>
+
+    <!-- Nút Squircle chính (Đổi sang dấu X gỗ tối khi mở) -->
+    <button
+      type="button"
+      id="concierge-toggle"
+      class="concierge-fab"
+      aria-label="Mở kênh liên hệ nhanh (Điện thoại, Zalo, Booking, Agoda)"
+      aria-expanded="false"
+      aria-controls="concierge-menu"
+    >
+      <span class="concierge-fab__dot" aria-hidden="true"></span>
+      <span class="concierge-fab__icon-open" aria-hidden="true">
+        <i data-lucide="concierge-bell" width="26" height="26"></i>
+      </span>
+      <span class="concierge-fab__icon-close" aria-hidden="true">
+        <i data-lucide="x" width="24" height="24"></i>
+      </span>
+    </button>
+  </div>
+
+  <!-- Thư viện Icon SVG sắc nét (Lucide) & Hoạt ảnh cuộn tinh tế (GSAP + ScrollTrigger) -->
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+
+  <!-- Mã nguồn JavaScript của dự án (Tách module rõ ràng) -->
+  <script src="js/data.js" defer></script>
+  <script src="js/components.js" defer></script>
+  <script src="js/booking.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

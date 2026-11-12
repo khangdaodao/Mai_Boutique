@@ -1,0 +1,115 @@
+/* ==========================================================================
+   DESIGN TOKENS — MAI'S BOUTIQUE (LUXURY WOOD & WARM IVORY SYSTEM)
+   --------------------------------------------------------------------------
+   Ghi chú chỉnh sửa:
+   - Toàn bộ màu sắc, phông chữ, khoảng cách, bo góc và đổ bóng được tập trung
+     tại đây (CSS Custom Properties).
+   - Muốn đổi tông màu chủ đạo (ví dụ: đậm hơn hoặc sáng hơn), bạn chỉ cần
+     sửa các biến trong :root mà không cần đụng vào các file CSS khác.
+   ========================================================================== */
+
+:root {
+  /* ------------------------------------------------------------------------
+     1. BẢNG MÀU CONCEPT GỖ TRANG TRỌNG (Warm Timber, Ivory & Brushed Gold)
+     ------------------------------------------------------------------------ */
+  /* Nền trang & Bề mặt (Surfaces) */
+  --color-bg-ivory: #FBF9F5;           /* Nền chính kem ngà ấm áp */
+  --color-bg-sand: #F3EDE3;            /* Nền phụ cát gỗ nhạt cho các section xen kẽ */
+  --color-surface: #FFFFFF;            /* Nền thẻ (Card) trắng tinh khiết */
+  --color-surface-warm: #FAF6EE;       /* Nền thẻ phụ ngà nhẹ */
+  --color-surface-glass: rgba(253, 250, 244, 0.92); /* Thanh booking nổi dạng kính mờ */
+
+  /* Tông gỗ tự nhiên (Wood & Espresso Scale) */
+  --color-wood-950: #1B1410;           /* Gỗ mun đậm (Nền footer, banner đánh giá tối) */
+  --color-wood-900: #2C2119;           /* Gỗ óc chó đậm (Tiêu đề chính, độ tương phản cao) */
+  --color-wood-800: #3E2F24;           /* Gỗ gụ ấm (Sub-heading, surface tối thứ cấp) */
+  --color-wood-700: #594638;           /* Gỗ trầm (Văn bản nội dung chính - WCAG AA >= 7:1) */
+  --color-wood-500: #877160;           /* Gỗ trung tính (Nhãn nhỏ, phụ đề, metadata) */
+  --color-wood-300: #CBBBA9;           /* Viền nhấn nhẹ */
+  --color-wood-200: #E4DACE;           /* Đường kẻ phân cách & viền card */
+  --color-wood-100: #F0EAE0;           /* Nền hover nhẹ cho icon/nút phụ */
+
+  /* Điểm nhấn Vàng Đồng / Gỗ Sồi Ấm (Brushed Bronze & Oak Gold Accent) */
+  --color-gold-700: #7D5420;           /* Vàng đồng rất đậm (Text accent trên nền sáng, đạt 4.5:1) */
+  --color-gold-600: #9E6E30;           /* Vàng đồng khi hover button */
+  --color-gold-500: #B98948;           /* Vàng đồng chủ đạo (CTA Buttons giống ảnh tham khảo) */
+  --color-gold-400: #D4AC72;           /* Vàng champagne (Sao đánh giá, icon trên nền tối) */
+  --color-gold-100: #F6ECE0;           /* Nền tag/badge vàng nhạt */
+
+  /* Trạng thái ngữ nghĩa (Semantic Status Colors) */
+  --color-success: #2C6E49;            /* Xanh lá giếng trời (Còn phòng / Xác nhận) */
+  --color-success-bg: #EBF5EF;
+  --color-warning: #B4690E;
+  --color-warning-bg: #FDF4E7;
+  --color-error: #B9382C;              /* Đỏ đất nung (Lỗi nhập liệu form) */
+  --color-error-bg: #FCECEB;
+
+  /* ------------------------------------------------------------------------
+     2. KIỂU CHỮ & TỈ LỆ CHỮ (Typography System)
+     - Cormorant Garamond: Serif nét mảnh thanh lịch cho tiêu đề (Hỗ trợ tiếng Việt)
+     - Inter: Sans-serif hiện đại, dễ đọc cho nội dung & form (Hỗ trợ tiếng Việt)
+     ------------------------------------------------------------------------ */
+  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Thang kích thước chữ linh hoạt theo màn hình (Fluid Typography với clamp) */
+  --text-xs: 0.75rem;                  /* 12px */
+  --text-sm: 0.875rem;                 /* 14px */
+  --text-base: 1rem;                   /* 16px */
+  --text-lg: 1.125rem;                 /* 18px */
+  --text-xl: 1.25rem;                  /* 20px */
+  --text-2xl: 1.5rem;                  /* 24px */
+  --text-3xl: clamp(1.85rem, 2.6vw, 2.35rem);
+  --text-4xl: clamp(2.25rem, 3.8vw, 3.2rem);
+  --text-hero: clamp(2.65rem, 5.4vw, 4.65rem);
+
+  /* ------------------------------------------------------------------------
+     3. KHOẢNG CÁCH & BỐ CỤC (Spacing & Layout Rhythm — bội số 4px/8px)
+     ------------------------------------------------------------------------ */
+  --space-1: 0.25rem;                  /* 4px */
+  --space-2: 0.5rem;                   /* 8px */
+  --space-3: 0.75rem;                  /* 12px */
+  --space-4: 1rem;                     /* 16px */
+  --space-5: 1.25rem;                  /* 20px */
+  --space-6: 1.5rem;                   /* 24px */
+  --space-8: 2rem;                     /* 32px */
+  --space-10: 2.5rem;                  /* 40px */
+  --space-12: 3rem;                    /* 48px */
+  --space-16: 4rem;                    /* 64px */
+  --space-20: 5rem;                    /* 80px */
+  --space-24: 6rem;                    /* 96px */
+
+  --container-max: 1240px;             /* Độ rộng tối đa của vùng nội dung */
+  --navbar-height: 76px;               /* Chiều cao thanh điều hướng */
+
+  /* ------------------------------------------------------------------------
+     4. BO GÓC & ĐỔ BÓNG (Radii & Warm Timber Shadows)
+     ------------------------------------------------------------------------ */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-pill: 9999px;
+
+  /* Đổ bóng dùng sắc độ nâu gỗ ấm (#2C2119) để hòa quyện với nền kem */
+  --shadow-xs: 0 2px 6px rgba(44, 33, 25, 0.05);
+  --shadow-sm: 0 4px 14px rgba(44, 33, 25, 0.06);
+  --shadow-md: 0 10px 30px rgba(44, 33, 25, 0.09);
+  --shadow-lg: 0 20px 50px rgba(27, 20, 16, 0.14);
+  --shadow-gold: 0 8px 24px rgba(185, 137, 72, 0.28);
+
+  /* ------------------------------------------------------------------------
+     5. CHUYỂN ĐỘNG & LỚP HIỂN THỊ (Transitions & Z-index Scale)
+     ------------------------------------------------------------------------ */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 160ms;
+  --duration-normal: 260ms;
+  --duration-slow: 450ms;
+
+  --z-base: 1;
+  --z-sticky: 30;
+  --z-navbar: 50;
+  --z-modal: 100;
+  --z-lightbox: 120;
+  --z-toast: 140;
+}
